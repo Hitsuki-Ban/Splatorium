@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>Splatorium の使い方</title>
+<style>
+  @page { size: A4; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 210mm; height: 297mm; }
+  body {
+    font-family: "Yu Gothic UI", "Yu Gothic", "Meiryo", sans-serif;
+    color: #1c1917;
+    padding: 11mm 13mm 9mm;
+    display: flex; flex-direction: column;
+    font-size: 9.4pt; line-height: 1.55;
+  }
+  /* ---- ヘッダー ---- */
+  header { display: flex; align-items: center; justify-content: space-between;
+    border-bottom: 2.2pt solid #1c1917; padding-bottom: 3mm; }
+  .brand { font-size: 20pt; font-weight: 800; }
+  .brand .sub { display: block; font-size: 9.6pt; font-weight: 600; color: #44403c; margin-top: 1mm; }
+  .pair { display: flex; align-items: center; gap: 2mm; }
+  .pair img { height: 17mm; width: 17mm; object-fit: cover; border-radius: 1.8mm; border: 0.6pt solid #d6d3d1; }
+  .pair .arr { color: #b45309; font-weight: 800; font-size: 13pt; }
+  .pair .lbl { font-size: 7pt; color: #78716c; text-align: center; margin-top: .8mm; }
+  /* ---- ステップ ---- */
+  .steps { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm 5.5mm; margin-top: 5mm; flex: 1; align-content: space-evenly; }
+  .card { display: flex; flex-direction: column; }
+  .shot { border: 0.6pt solid #d6d3d1; border-radius: 2mm; overflow: hidden; background: #fafaf9;
+    display: flex; align-items: center; justify-content: center; }
+  .shot.short { height: 43mm; }
+  .shot.tall { height: 64mm; }
+  .shot img.fit { max-width: 96%; max-height: 94%; object-fit: contain; }
+  .shot img.crop { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .cap { display: flex; gap: 2.2mm; margin-top: 1.8mm; align-items: flex-start; }
+  .cap .n { flex: 0 0 5.2mm; height: 5.2mm; border-radius: 50%; background: #1c1917; color: #fff;
+    font-weight: 800; font-size: 9pt; display: flex; align-items: center; justify-content: center; margin-top: .3mm; }
+  .cap b { display: block; font-size: 10.5pt; }
+  .cap span { font-size: 8.6pt; color: #57534e; }
+  /* ---- 下段情報バー ---- */
+  .info { display: grid; grid-template-columns: 1.1fr 1.5fr 1.2fr; gap: 5.5mm; margin-top: 5mm;
+    border-top: 0.8pt solid #d6d3d1; padding-top: 3.5mm; }
+  .info h2 { font-size: 9.2pt; font-weight: 800; margin-bottom: 1.6mm;
+    padding-left: 2mm; border-left: 2.6pt solid #f59e0b; }
+  .info p, .info li { font-size: 8.5pt; color: #44403c; }
+  .info ul { margin-left: 3.6mm; }
+  .info li { margin-bottom: .6mm; }
+  /* ---- フッター ---- */
+  footer { border-top: 0.8pt solid #d6d3d1; margin-top: 3mm; padding-top: 1.8mm;
+    display: flex; justify-content: space-between; font-size: 7.6pt; color: #78716c; }
+  footer b { color: #44403c; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Splatorium
+    <span class="sub">画像 1 枚から 3D モデルを作って、そのまま並べられるローカルアプリ</span>
+  </div>
+  <div class="pair">
+    <div><img src="shots/input-potion.png" alt="原画"><div class="lbl">原画 1 枚</div></div>
+    <div class="arr">→</div>
+    <div><img src="shots/output-potion.webp" alt="3D モデル"><div class="lbl">3D モデル</div></div>
+  </div>
+</header>
+
+<div class="steps">
+  <div class="card">
+    <div class="shot short"><img class="fit" src="shots/a-generate.png" alt="生成ダイアログ"></div>
+    <div class="cap"><div class="n">1</div><div>
+      <b>画像を選んで、生成開始</b>
+      <span>ブラウザに画像をドロップ。細かさ（3 プリセット）を選んで開始したら、あとは待つだけ。</span>
+    </div></div>
+  </div>
+  <div class="card">
+    <div class="shot short"><img class="crop" src="shots/b-warehouse.png" alt="アセット倉庫" style="object-position: right center;"></div>
+    <div class="cap"><div class="n">2</div><div>
+      <b>できたモデルは倉庫に並ぶ</b>
+      <span>完成すると自動で収蔵。サムネイル一覧・名前変更・検索・削除もここから。</span>
+    </div></div>
+  </div>
+  <div class="card">
+    <div class="shot tall"><img class="fit" src="shots/c-preview.png" alt="3D プレビュー"></div>
+    <div class="cap"><div class="n">3</div><div>
+      <b>ダブルクリックで 3D を確認</b>
+      <span>ぐるっと回して原画と見比べ。気に入ったら「＋ シーンへ追加」。</span>
+    </div></div>
+  </div>
+  <div class="card">
+    <div class="shot tall"><img class="fit" src="shots/d-scene.png" alt="シーン編集"></div>
+    <div class="cap"><div class="n">4</div><div>
+      <b>シーンに置いて、保存</b>
+      <span>W / E / R キーで移動・回転・拡縮。グループ化・Undo/Redo 対応。保存したシーンはいつでも再開。</span>
+    </div></div>
+  </div>
+</div>
+
+<div class="info">
+  <div>
+    <h2>必要なもの</h2>
+    <ul>
+      <li>Windows PC と WebGL2 対応ブラウザ</li>
+      <li><code>app/node/README.txt</code> に記載された Node.js</li>
+      <li>TripoSplat 対応の ComfyUI</li>
+      <li>指定のモデルファイル</li>
+    </ul>
+  </div>
+  <div>
+    <h2>はじめ方</h2>
+    <p>GitHub Releases から Portable ZIP を取得して展開します。Node.js と ComfyUI を所定の場所に配置し、モデルを準備してから <b>run.bat</b> を実行してください。</p>
+    <p style="margin-top:1.6mm">初回設定、モデルの取得、基本操作、バックアップ方法は、リポジトリ内の日本語ユーザーマニュアルで確認できます。</p>
+  </div>
+  <div>
+    <h2>動作環境</h2>
+    <ul>
+      <li>Windows + GPU（<b>NVIDIA 12 GB 級推奨</b>）</li>
+      <li>Intel GPU は対応する ComfyUI と PyTorch XPU 環境が必要</li>
+      <li>閲覧・シーン編集は生成より少ない GPU メモリを使用</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <div><b>MIT License</b>　･　<b>Built with DINOv3</b>（DINOv3 由来のビジョンエンコーダは DINOv3 License 対象）</div>
+  <div>v1.0.0　･　github.com/Hitsuki-Ban/Splatorium</div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+      - run: pnpm typecheck
+      - run: pnpm build:portable-app
+      - run: pnpm licenses:check
+      - run: pnpm smoke:production
+      - run: pnpm smoke:portable
+      - run: pnpm smoke:portable-archive
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm test:e2e

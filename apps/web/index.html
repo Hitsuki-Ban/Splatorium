@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splatorium</title>
+    <script>
+      // FOUC 防止: React マウント前に保存済みテーマから明暗クラスを適用する。
+      // ロジックは src/lib/theme.tsx の resolveIsDark と一致させること
+      ;(function () {
+        try {
+          var storedTheme = localStorage.getItem('splatorium-theme')
+          var theme =
+            storedTheme === 'light' ||
+            storedTheme === 'dark' ||
+            storedTheme === 'system' ||
+            storedTheme === 'sunset'
+              ? storedTheme
+              : 'dark'
+          var hour = new Date().getHours()
+          var dark =
+            theme === 'dark' ||
+            (theme === 'system' && matchMedia('(prefers-color-scheme: dark)').matches) ||
+            (theme === 'sunset' && (hour >= 18 || hour < 6))
+          document.documentElement.classList.toggle('dark', dark)
+        } catch (e) {
+          document.documentElement.classList.add('dark')
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

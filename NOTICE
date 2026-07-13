@@ -1,0 +1,24 @@
+Splatorium Notice
+
+The source distribution and Portable package do not include TripoSplat model
+weight files.
+Model weights are either downloaded by the user through setup-models.bat or copied
+by the user into models/incoming/ and imported through import-models.bat. Both
+routes verify file size and SHA-256 against comfy/models.json before placing files
+under the local ComfyUI models directory.
+
+Built with DINOv3.
+
+The DINO vision encoder file listed in comfy/models.json is treated as a
+DINOv3-derived component:
+
+- Source file: clip_vision/dino_v3_vit_h.safetensors
+- Target path: models/clip_vision/dino_v3_vit_h.safetensors
+- SHA-256: a29ef35101a16966972a0d50732a6f3a608ff7cfffb2afa9bbe9007cb842cc53
+- License: DINOv3 License
+- License copy: licenses/dinov3/LICENSE.md
+
+Use and redistribution of DINOv3 Materials are subject to the DINOv3 License,
+including Trade Controls / ITAR restrictions and the prohibited end uses described
+there. Do not use DINOv3 Materials for military or warfare purposes, nuclear
+industries or applications, espionage, guns, or illegal weapons related end uses.

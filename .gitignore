@@ -1,0 +1,26 @@
+# dependencies / build
+node_modules/
+dist/
+output/
+playwright-report/
+test-results/
+*.tsbuildinfo
+/.worktree/
+
+# アセット倉庫の実体（DB・生成物・アップロード画像）
+data/
+
+# ComfyUI ランタイム・モデル重み（リポには manifest のみ置く）
+comfy/runtime/
+comfy/models/
+
+# env / local
+.env
+.env.*
+*.local
+
+# logs / OS
+logs/
+*.log
+.DS_Store
+Thumbs.db

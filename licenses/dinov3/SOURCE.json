@@ -1,0 +1,7 @@
+{
+  "authoritativeSource": "https://ai.meta.com/resources/models-and-libraries/dinov3-license/",
+  "sourceDate": "2025-08-14",
+  "retrievedAt": "2026-07-12",
+  "licenseSha256": "95750e210d2cd8c8fd035c3bf496a90fe6ea8875aa6518b7fa1aca9c97b86a5f",
+  "note": "LICENSE.md is a faithful Markdown transcription of the Meta-hosted Agreement. The facebookresearch/dinov3 GitHub license is a different, non-authoritative variant for this project."
+}

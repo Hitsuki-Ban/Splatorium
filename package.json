@@ -1,0 +1,35 @@
+{
+  "name": "splatorium",
+  "private": true,
+  "version": "1.0.0",
+  "description": "ローカル3D生成ワークベンチ + 生成アセット倉庫（画像 → TripoSplat → 3DGS）",
+  "type": "module",
+  "packageManager": "pnpm@10.33.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build:shared": "pnpm --filter @splatorium/shared build",
+    "predev": "pnpm build:shared",
+    "dev": "pnpm -r --parallel dev",
+    "pretest": "pnpm build:shared",
+    "test": "pnpm -r test && pnpm test:scripts",
+    "pretest:e2e": "pnpm build",
+    "test:e2e": "playwright test",
+    "test:scripts": "node --test scripts/*.test.mjs",
+    "pretypecheck": "pnpm build:shared",
+    "typecheck": "pnpm -r typecheck",
+    "build": "pnpm -r build",
+    "build:portable-app": "pnpm build && node scripts/build-portable-app.mjs",
+    "licenses:check": "node scripts/license-inventory.mjs --check",
+    "licenses:update": "node scripts/license-inventory.mjs --write",
+    "smoke:production": "node scripts/smoke-built-server.mjs --entry apps/server/dist/index.js --web-dir apps/web/dist --workflow comfy/workflows/image-to-splat.json",
+    "smoke:portable": "node scripts/smoke-built-server.mjs --entry dist/portable/SplatoriumPortable/app/server/dist/index.js --web-dir dist/portable/SplatoriumPortable/app/server/public --workflow dist/portable/SplatoriumPortable/comfy/workflows/image-to-splat.json",
+    "smoke:portable-archive": "node scripts/smoke-portable-archive.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.61.1",
+    "archiver": "8.0.0",
+    "unzipper": "0.12.5"
+  }
+}

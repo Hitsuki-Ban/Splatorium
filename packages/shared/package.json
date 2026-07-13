@@ -1,0 +1,32 @@
+{
+  "name": "@splatorium/shared",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "フロント・サーバー間で共有する型定義とランタイム契約",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "dev": "tsc -p tsconfig.build.json --watch --preserveWatchOutput",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "devDependencies": {
+    "typescript": "^7.0.2",
+    "vitest": "4.1.10"
+  },
+  "dependencies": {
+    "@noble/hashes": "2.2.0",
+    "canonicalize": "3.0.0"
+  }
+}
