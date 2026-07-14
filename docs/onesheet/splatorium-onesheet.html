@@ -28,8 +28,7 @@
   .card { display: flex; flex-direction: column; }
   .shot { border: 0.6pt solid #d6d3d1; border-radius: 2mm; overflow: hidden; background: #fafaf9;
     display: flex; align-items: center; justify-content: center; }
-  .shot.short { height: 43mm; }
-  .shot.tall { height: 64mm; }
+  .shot.short, .shot.tall { height: 50mm; }
   .shot img.fit { max-width: 96%; max-height: 94%; object-fit: contain; }
   .shot img.crop { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
   .cap { display: flex; gap: 2.2mm; margin-top: 1.8mm; align-items: flex-start; }
@@ -55,42 +54,42 @@
 
 <header>
   <div class="brand">Splatorium
-    <span class="sub">画像 1 枚から 3D モデルを作って、そのまま並べられるローカルアプリ</span>
+    <span class="sub">画像 1 枚から 3D モデルを作り、集めて並べられるローカルアプリ</span>
   </div>
   <div class="pair">
-    <div><img src="shots/input-potion.png" alt="原画"><div class="lbl">原画 1 枚</div></div>
+    <div><img src="../showcase/shots/input-moon-rabbit.webp" alt="月うさぎの原画"><div class="lbl">原画 1 枚</div></div>
     <div class="arr">→</div>
-    <div><img src="shots/output-potion.webp" alt="3D モデル"><div class="lbl">3D モデル</div></div>
+    <div><img src="../showcase/shots/output-moon-rabbit.webp" alt="月うさぎの 3D モデル"><div class="lbl">3D モデル</div></div>
   </div>
 </header>
 
 <div class="steps">
   <div class="card">
-    <div class="shot short"><img class="fit" src="shots/a-generate.png" alt="生成ダイアログ"></div>
+    <div class="shot short"><img class="crop" src="../showcase/shots/generate.png" alt="月うさぎの生成画面"></div>
     <div class="cap"><div class="n">1</div><div>
-      <b>画像を選んで、生成開始</b>
-      <span>ブラウザに画像をドロップ。細かさ（3 プリセット）を選んで開始したら、あとは待つだけ。</span>
+      <b>画像を選んで、生成する</b>
+      <span>画像を選び、モデルの細かさを決めて開始。作業状況は同じ画面で確認できます。</span>
     </div></div>
   </div>
   <div class="card">
-    <div class="shot short"><img class="crop" src="shots/b-warehouse.png" alt="アセット倉庫" style="object-position: right center;"></div>
+    <div class="shot short"><img class="crop" src="../showcase/shots/hero-desktop.png" alt="生成済みモデルが並ぶ倉庫画面"></div>
     <div class="cap"><div class="n">2</div><div>
-      <b>できたモデルは倉庫に並ぶ</b>
-      <span>完成すると自動で収蔵。サムネイル一覧・名前変更・検索・削除もここから。</span>
+      <b>できたモデルを倉庫で探す</b>
+      <span>完成したモデルは自動で収蔵。サムネイルを見ながら、名前の変更や検索もできます。</span>
     </div></div>
   </div>
   <div class="card">
-    <div class="shot tall"><img class="fit" src="shots/c-preview.png" alt="3D プレビュー"></div>
+    <div class="shot tall"><img class="crop" src="../showcase/shots/preview.png" alt="月うさぎの 3D プレビュー"></div>
     <div class="cap"><div class="n">3</div><div>
-      <b>ダブルクリックで 3D を確認</b>
-      <span>ぐるっと回して原画と見比べ。気に入ったら「＋ シーンへ追加」。</span>
+      <b>好きな角度から 3D を見る</b>
+      <span>モデルを回転・拡大して原画と見比べます。気に入ったら、そのままシーンへ追加。</span>
     </div></div>
   </div>
   <div class="card">
-    <div class="shot tall"><img class="fit" src="shots/d-scene.png" alt="シーン編集"></div>
+    <div class="shot tall"><img class="crop" src="../showcase/shots/compose.png" alt="複数のモデルを配置したシーン編集画面"></div>
     <div class="cap"><div class="n">4</div><div>
-      <b>シーンに置いて、保存</b>
-      <span>W / E / R キーで移動・回転・拡縮。グループ化・Undo/Redo 対応。保存したシーンはいつでも再開。</span>
+      <b>シーンに並べて、保存する</b>
+      <span>移動・回転・拡縮で位置を整え、複数のモデルをひとつの場面に。保存後もいつでも続きから編集できます。</span>
     </div></div>
   </div>
 </div>

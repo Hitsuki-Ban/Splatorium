@@ -1,10 +1,13 @@
 # Splatorium
 
-**One image in, a 3D specimen out.**
+**Turn one image into a 3D collection of your own.**
 
-Splatorium is a local 3D workbench that uses ComfyUI and TripoSplat to turn an image into a 3D Gaussian Splat. You can organize generated models in a browser-based collection, arrange several models in a scene, and share the same collection with devices on your LAN.
+Splatorium is a local 3D workbench that turns images into 3D Gaussian Splats, then lets you collect and arrange them in your browser. Generation uses ComfyUI and TripoSplat. Finished models and scenes stay on your machine and can also be accessed from other devices on the same LAN.
 
-![Scene editor with generated models](docs/onesheet/shots/d-scene.png)
+<picture>
+  <source media="(max-width: 720px)" srcset="docs/showcase/shots/hero-mobile.png">
+  <img src="docs/showcase/shots/hero-desktop.png" alt="Splatorium scene editor displaying a curated collection of generated 3D models, including a moon rabbit" width="100%">
+</picture>
 
 ## Features
 
@@ -13,9 +16,27 @@ Splatorium is a local 3D workbench that uses ComfyUI and TripoSplat to turn an i
 - **Compose** — translate, rotate, and scale multiple models, groups, and nested scenes
 - **Share** — use the same collection and scenes from browsers on your LAN
 
-| Choose an image and generate | Find the completed model in the collection |
-|---|---|
-| ![Generation dialog](docs/onesheet/shots/a-generate.png) | ![Model and scene collection](docs/onesheet/shots/b-warehouse.png) |
+## From image to scene
+
+### 1. Generate — Turn an image into a model
+
+Choose an image you like, select the level of detail, and start generation. You can follow its progress without leaving the page.
+
+![Generation screen with a moon rabbit image ready to use](docs/showcase/shots/generate.png)
+
+### 2. Organize — Collect and inspect your models
+
+Each finished model appears in the collection automatically. Browse by name or thumbnail, then open any model to inspect it from every angle.
+
+![Collection screen with a varied set of generated models](docs/showcase/shots/organize.png)
+
+![3D preview showing the moon rabbit model from a three-quarter view](docs/showcase/shots/preview.png)
+
+### 3. Compose — Build a scene of your own
+
+Add models to a scene, then move, rotate, and scale them into place. Save a composition made from several models and return to it whenever you like.
+
+![Scene editor with generated models arranged as a curated display](docs/showcase/shots/compose.png)
 
 ## Use the Portable Release
 

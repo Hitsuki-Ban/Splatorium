@@ -4,6 +4,8 @@ dist/
 output/
 playwright-report/
 test-results/
+.tmp/
+.playwright-cli/
 *.tsbuildinfo
 /.worktree/
 
