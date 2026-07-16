@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "productVersion": "1.0.1",
+  "approvedAt": "2026-07-16T01:29:28Z",
+  "approvedBy": "Hitsuki-Ban",
+  "approvalUrl": "https://github.com/Hitsuki-Ban/Splatorium/issues/2",
+  "decision": "approved-for-public-distribution",
+  "artifacts": [
+    {
+      "path": "docs/onesheet/splatorium-onesheet.html",
+      "bytes": 6572,
+      "sha256": "c3d80009a92ce902583684de1a5a77b6fdf0dbc2578478b1cec8a1252d197fbe",
+      "origin": "project-authored"
+    },
+    {
+      "path": "docs/splatorium-onesheet.pdf",
+      "bytes": 5394510,
+      "sha256": "44e74c4cbeab01eec69f180373e5059cace336917e54df65d45d6892fa566093",
+      "origin": "project-rendered",
+      "generationScript": {
+        "path": "docs/onesheet/render.mjs",
+        "sha256": "9f06d859b8ac18ab451a5eae65cee29604085ae935c351d3072c1a9f8c1dd491"
+      }
+    }
+  ],
+  "changePolicy": "Any artifact or generation-script change requires a new approval record."
+}
